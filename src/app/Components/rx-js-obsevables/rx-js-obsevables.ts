@@ -34,13 +34,13 @@ export class RxJsObsevables {
 
 
     // this.cityList$.subscribe((data:string[])=>{
-    //   debugger;
+    //    ;
     //   console.log(data);
     // })
 
     //One by one Data used from the observable
     // this.cityList$.subscribe((data:string)=>{
-    //   debugger;
+    //    ;
     //   console.log(data);
 
     // })
@@ -53,7 +53,7 @@ export class RxJsObsevables {
     // })
 
     // myObs$.subscribe(message=>{
-    //   debugger;
+    //    ;
     //   console.log(message);
     // })
 
@@ -63,7 +63,7 @@ export class RxJsObsevables {
     // })
 
     // newObs$.subscribe(data=>{
-    //   debugger;
+    //    ;
     //   console.log(data);
     // })
 

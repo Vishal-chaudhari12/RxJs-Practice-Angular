@@ -1,40 +1,64 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">RxJs Practice</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-      aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarScroll"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+      <ul
+        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+        style="--bs-scroll-height: 100px;"
+      >
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/RxJs-Operators">RxJs-Operators</a>
+          <a class="nav-link active" routerLink="/RxJs-Operators">RxJs Operators</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" routerLink="/RxJs-Practice">RxJs Practice</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Link
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
+
         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Link</a>
+          <a class="nav-link" routerLink="/Sub-Beh-ShareReplay">
+            Subject Behaviour ShareReplay
+          </a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-outline-success" type="submit">Search</button>
+
+      <!-- Role Dropdown -->
+      <div class="d-flex align-items-center me-3">
+        <label class="me-2 fw-semibold">Role:</label>
+        <select
+          class="form-select"
+          style="width:180px"
+          (change)="onRoleChange($event)"
+        >
+          <option value="">Select Role</option>
+          <option value="superAdmin">Super Admin</option>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+        </select>
+      </div>
+
+      <!-- Search -->
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">
+          Search
+        </button>
       </form>
     </div>
   </div>
 </nav>
+
 <router-outlet></router-outlet>
