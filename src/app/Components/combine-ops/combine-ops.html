@@ -1,0 +1,199 @@
+<div class="container py-4">
+
+    <div class="text-center mb-5">
+        <h1 class="fw-bold text-primary">
+            RxJS Higher Order Mapping Operators
+        </h1>
+
+        <p class="lead text-muted">
+            Learn when and why to use <strong>switchMap</strong>,
+            <strong>mergeMap</strong>,
+            <strong>concatMap</strong> and
+            <strong>exhaustMap</strong> in Angular.
+        </p>
+    </div>
+
+    <!-- SwitchMap -->
+
+    <div class="card shadow-sm border-0 mb-4 operator-card switch">
+        <div class="card-body">
+
+            <h3 class="text-primary">
+                🔄 switchMap
+            </h3>
+
+            <p class="operator-desc">
+                Cancels the previous API request whenever a new value is emitted
+                and subscribes only to the latest request.
+            </p>
+
+            <div class="info-box">
+                <strong>Why use it?</strong>
+
+                <ul>
+                    <li>Prevents unnecessary API calls.</li>
+                    <li>Only latest user input matters.</li>
+                    <li>Best for Search Autocomplete.</li>
+                </ul>
+
+                <strong>Real Time Example</strong>
+
+                <p>
+                    Google Search, YouTube Search,
+                    Product Search,
+                    Employee Search.
+                </p>
+            </div>
+
+            <input
+                class="form-control mt-3"
+                [formControl]="searchControl"
+                placeholder="Search Products..."
+            >
+
+        </div>
+    </div>
+
+
+
+    <!-- MergeMap -->
+
+    <div class="card shadow-sm border-0 mb-4 operator-card merge">
+
+        <div class="card-body">
+
+            <h3 class="text-success">
+                ⚡ mergeMap
+            </h3>
+
+            <p class="operator-desc">
+                Executes every request simultaneously.
+                No request gets cancelled.
+            </p>
+
+            <div class="info-box">
+
+                <strong>Why use it?</strong>
+
+                <ul>
+                    <li>Multiple requests can run together.</li>
+                    <li>Fast execution.</li>
+                    <li>Response order doesn't matter.</li>
+                </ul>
+
+                <strong>Real Time Example</strong>
+
+                <p>
+                    Upload multiple images,
+                    Send notifications,
+                    Fetch multiple user profiles.
+                </p>
+
+            </div>
+
+            <input
+                class="form-control mt-3"
+                [formControl]="searchControlMerge"
+                placeholder="Type Quickly..."
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ConcatMap -->
+
+    <div class="card shadow-sm border-0 mb-4 operator-card concat">
+
+        <div class="card-body">
+
+            <h3 class="text-warning">
+                📋 concatMap
+            </h3>
+
+            <p class="operator-desc">
+                Executes requests one after another.
+                Waits until the current request finishes.
+            </p>
+
+            <div class="info-box">
+
+                <strong>Why use it?</strong>
+
+                <ul>
+                    <li>Maintains request order.</li>
+                    <li>No request is cancelled.</li>
+                    <li>Perfect for sequential operations.</li>
+                </ul>
+
+                <strong>Real Time Example</strong>
+
+                <p>
+                    Save Form Step 1 →
+                    Save Step 2 →
+                    Save Step 3
+                </p>
+
+            </div>
+
+            <input
+                class="form-control mt-3"
+                [formControl]="searchControlConcat"
+                placeholder="Sequential Requests..."
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ExhaustMap -->
+
+    <div class="card shadow-sm border-0 mb-5 operator-card exhaust">
+
+        <div class="card-body">
+
+            <h3 class="text-danger">
+                🚫 exhaustMap
+            </h3>
+
+            <p class="operator-desc">
+                Ignores all new requests until the current request completes.
+            </p>
+
+            <div class="info-box">
+
+                <strong>Why use it?</strong>
+
+                <ul>
+                    <li>Prevents duplicate API calls.</li>
+                    <li>Avoids double clicking.</li>
+                    <li>Only first request is accepted.</li>
+                </ul>
+
+                <strong>Real Time Example</strong>
+
+                <p>
+                    Login Button,
+                    Payment Button,
+                    Place Order Button.
+                </p>
+
+            </div>
+
+            <button
+                class="btn btn-danger mt-3"
+                (click)="onLogin()">
+
+                Login
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
