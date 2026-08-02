@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+
+**LIVE Link : https://rx-js-practice-angular.vercel.app/RxJs-Operators**
+-----------------------------------------------------------------------------------------------------------
 # RxJsPracticeAngular
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
