@@ -1,0 +1,60 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+
+    <div class="col-md-6">
+
+      <mat-card>
+
+        <mat-card-title class="text-center mb-4">
+          Registration Form
+        </mat-card-title>
+
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+          <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-label>Mobile</mat-label>
+            <input matInput formControlName="mobile">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100 mb-4">
+            <mat-label>Gender</mat-label>
+
+            <mat-select formControlName="gender">
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+              <mat-option value="Other">Other</mat-option>
+            </mat-select>
+
+          </mat-form-field>
+
+          <button
+            mat-raised-button
+            color="primary"
+            class="w-100"
+            type="submit">
+            Register
+          </button>
+
+        </form>
+
+      </mat-card>
+
+    </div>
+
+  </div>
+</div>
