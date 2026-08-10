@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RxjsReactiveForms } from './rxjs-reactive-forms';
+import { RxjsReactiveForm } from './rxjs-reactive-form';
 
-describe('RxjsReactiveForms', () => {
-  let component: RxjsReactiveForms;
-  let fixture: ComponentFixture<RxjsReactiveForms>;
+describe('RxjsReactiveForm', () => {
+  let component: RxjsReactiveForm;
+  let fixture: ComponentFixture<RxjsReactiveForm>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RxjsReactiveForms]
+      imports: [RxjsReactiveForm]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RxjsReactiveForms);
+    fixture = TestBed.createComponent(RxjsReactiveForm);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
