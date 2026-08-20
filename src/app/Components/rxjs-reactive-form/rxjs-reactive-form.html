@@ -1,4 +1,11 @@
+<div class="col-8">
+    <h3>Search Results Using Debounce</h3>
+    <input type="text" [formControl]="searchControl" placeholder="Search...">
+</div>
+
 <div class="register-container">
+
+
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
         <h2>Create Account</h2>
@@ -21,7 +28,7 @@
         <div class="form-group">
             <label>Confirm Password</label>
             <input type="password" formControlName="confirmPassword" placeholder="Confirm password">
-            <div class="error" *ngIf="passworldMismatch">
+            <div class="error" *ngIf="passworldMismatch" style="color: red; font-size: 12px;">
                 Passwords do not match
             </div>
         </div>

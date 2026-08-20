@@ -4,6 +4,7 @@ import { Operators } from './Components/operators/operators';
 import { SubBehShareReplay } from './Components/sub-beh-share-replay/sub-beh-share-replay';
 import { CombineOps } from './Components/combine-ops/combine-ops';
 import { RxjsReactiveForm } from './Components/rxjs-reactive-form/rxjs-reactive-form';
+import { Unsubscribe } from './Components/unsubscribe/unsubscribe';
 
 export const routes: Routes = [
 
@@ -13,5 +14,6 @@ export const routes: Routes = [
     {path: 'Sub-Beh-ShareReplay', component:SubBehShareReplay},
     {path:'CombineOps', component:CombineOps},
     {path:'rxjs-reactive-forms', component:RxjsReactiveForm},
+    {path:'unsubscribe', component:Unsubscribe},
     
 ];

@@ -2,20 +2,12 @@
   <div class="container-fluid">
     <!-- <a class="navbar-brand" href="#">RxJs Practice</a> -->
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarScroll"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul
-        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-        style="--bs-scroll-height: 100px;"
-      >
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link active" routerLink="/RxJs-Operators">RxJs Operators</a>
         </li>
@@ -41,16 +33,18 @@
             RXJS REACTIVE FORMS
           </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/unsubscribe">
+            Unsubscribe
+          </a>
+        </li>
       </ul>
 
       <!-- Role Dropdown -->
       <div class="d-flex align-items-center me-3">
         <label class="me-2 fw-semibold">Role:</label>
-        <select
-          class="form-select"
-          style="width:180px"
-          (change)="onRoleChange($event)"
-        >
+        <select class="form-select" style="width:180px" (change)="onRoleChange($event)">
           <option value="">Select Role</option>
           <option value="superAdmin">Super Admin</option>
           <option value="admin">Admin</option>

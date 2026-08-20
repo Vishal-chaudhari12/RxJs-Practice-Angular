@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { combineLatest, debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-rxjs-reactive-form',
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './rxjs-reactive-form.html',
   styleUrl: './rxjs-reactive-form.css',
 })
@@ -12,6 +13,8 @@ export class RxjsReactiveForm implements OnInit {
 
   registerForm!: FormGroup;
   passworldMismatch: boolean = false;
+
+  searchControl: FormControl = new FormControl('');
 
 
   constructor(private fb: FormBuilder) {
@@ -25,6 +28,13 @@ export class RxjsReactiveForm implements OnInit {
   }
 
   ngOnInit() {
+
+    this.searchControl.valueChanges.pipe(
+      debounceTime(1000),
+    ).subscribe((search: any) => {
+      console.log('Search Value Changed:', search);
+    })
+
     this.registerForm.controls['confirmPassword'].disable();
 
 
@@ -44,6 +54,15 @@ export class RxjsReactiveForm implements OnInit {
         this.registerForm.controls['confirmPassword'].enable();
       }
     })
+
+    combineLatest([
+      this.registerForm.controls['password'].valueChanges,
+      this.registerForm.controls['confirmPassword'].valueChanges
+    ]).subscribe(([pwd, confirmpwd]) => {
+      this.passworldMismatch = pwd && confirmpwd && pwd !== confirmpwd;
+
+    })
+
   }
 
   onSubmit() {
@@ -52,5 +71,7 @@ export class RxjsReactiveForm implements OnInit {
       alert('Registration Successful!');
     }
   }
+
+
 
 }
