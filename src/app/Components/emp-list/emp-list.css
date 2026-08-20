@@ -1,0 +1,161 @@
+.employee-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  padding: 12px;
+}
+
+.employee-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.employee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.employee-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.employee-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #3f51b5;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.employee-info {
+  flex: 1;
+}
+
+.employee-info h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #222;
+  overflow-wrap: anywhere;
+}
+
+.employee-info span {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #777;
+}
+
+.status {
+  flex-shrink: 0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.status.active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status.inactive {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.employee-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  border-top: 1px solid #eeeeee;
+  padding-top: 18px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 12px;
+  color: #888;
+}
+
+.value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.employee-footer {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  border-top: 1px solid #eeeeee;
+  padding-top: 15px;
+}
+
+.employee-footer button {
+  flex: 1;
+  padding: 9px 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.view-btn {
+  background: #3f51b5;
+  color: white;
+  border: 1px solid #3f51b5;
+}
+
+.edit-btn {
+  background: white;
+  color: #3f51b5;
+  border: 1px solid #3f51b5;
+}
+
+.view-btn:hover {
+  background: #303f9f;
+}
+
+.edit-btn:hover {
+  background: #f1f3ff;
+}
+
+@media (max-width: 576px) {
+  .employee-grid {
+    grid-template-columns: 1fr;
+    padding: 10px 0;
+  }
+
+  .employee-card {
+    padding: 15px;
+  }
+
+  .employee-header {
+    align-items: flex-start;
+  }
+
+  .employee-details {
+    gap: 14px 10px;
+  }
+}

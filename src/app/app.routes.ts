@@ -5,6 +5,9 @@ import { SubBehShareReplay } from './Components/sub-beh-share-replay/sub-beh-sha
 import { CombineOps } from './Components/combine-ops/combine-ops';
 import { RxjsReactiveForm } from './Components/rxjs-reactive-form/rxjs-reactive-form';
 import { Unsubscribe } from './Components/unsubscribe/unsubscribe';
+import { EmpLayout } from './Components/emp-layout/emp-layout';
+import { EmpList } from './Components/emp-list/emp-list';
+import { EmpDetails } from './Components/emp-details/emp-details';
 
 export const routes: Routes = [
 
@@ -15,5 +18,27 @@ export const routes: Routes = [
     {path:'CombineOps', component:CombineOps},
     {path:'rxjs-reactive-forms', component:RxjsReactiveForm},
     {path:'unsubscribe', component:Unsubscribe},
+    {
+        path:'employee',
+        component:EmpLayout,
+        children:[
+            {
+                path:'',
+                component:EmpList,
+                outlet:'listOutlet'
+
+            },
+             {
+                path:'details',
+                component:EmpDetails,
+                outlet:'detailsOutlet'
+            },
+            {
+                path:'details/:id',
+                component:EmpDetails,
+                outlet:'detailsOutlet'
+            }
+        ]
+    }
     
 ];

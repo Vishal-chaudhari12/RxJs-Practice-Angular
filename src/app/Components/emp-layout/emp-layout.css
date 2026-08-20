@@ -1,0 +1,26 @@
+.employee-list-panel,
+.employee-details-panel {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.employee-list-panel {
+  max-height: calc(100vh - 24px);
+  overflow-y: auto;
+}
+
+.employee-details-panel {
+  min-height: calc(100vh - 24px);
+}
+
+@media (max-width: 767.98px) {
+  .employee-list-panel {
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .employee-details-panel {
+    min-height: 0;
+  }
+}

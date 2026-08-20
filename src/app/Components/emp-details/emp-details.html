@@ -1,0 +1,155 @@
+<div class="employee-details-page" *ngIf="employee">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div>
+      <h2>Employee Details</h2>
+      <p>View complete information about the employee</p>
+    </div>
+  </div>
+
+  <!-- Employee Profile -->
+  <div class="profile-card">
+
+    <div class="profile-top">
+
+      <div class="profile-avatar">
+        {{ employee.firstName.charAt(0) }}{{ employee.lastName.charAt(0) }}
+      </div>
+
+      <div class="profile-info">
+
+        <h1>
+          {{ employee.firstName }} {{ employee.lastName }}
+        </h1>
+
+        <p>{{ employee.designation }}</p>
+
+        <span class="status" [class.active]="employee.status === 'Active'"
+          [class.inactive]="employee.status === 'Inactive'">
+          {{ employee.status }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Basic Information -->
+  <div class="details-card">
+
+    <div class="card-title">
+      <h3>Basic Information</h3>
+    </div>
+
+    <div class="details-grid">
+
+      <div class="detail-item">
+        <span class="label">Employee ID</span>
+        <span class="value">{{ employee.employeeId }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">First Name</span>
+        <span class="value">{{ employee.firstName }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Last Name</span>
+        <span class="value">{{ employee.lastName }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Department</span>
+        <span class="value">{{ employee.department }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Designation</span>
+        <span class="value">{{ employee.designation }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Joining Date</span>
+        <span class="value">
+          {{ employee.joiningDate | date:'dd MMM yyyy' }}
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Contact Information -->
+  <div class="details-card">
+
+    <div class="card-title">
+      <h3>Contact Information</h3>
+    </div>
+
+    <div class="details-grid">
+
+      <div class="detail-item">
+        <span class="label">Email Address</span>
+        <span class="value">{{ employee.email }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Mobile Number</span>
+        <span class="value">{{ employee.mobile }}</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Employment Information -->
+  <div class="details-card">
+
+    <div class="card-title">
+      <h3>Employment Information</h3>
+    </div>
+
+    <div class="details-grid">
+
+      <div class="detail-item">
+        <span class="label">Department</span>
+        <span class="value">{{ employee.department }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Designation</span>
+        <span class="value">{{ employee.designation }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Salary</span>
+        <span class="value">
+          ₹{{ employee.salary | number }}
+        </span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Employment Status</span>
+        <span class="value">
+          {{ employee.status }}
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Employee Not Found -->
+<div class="no-data" *ngIf="!employee">
+
+  <h3>Employee Not Found</h3>
+
+  <p>
+    Employee details are not available.
+  </p>
+
+</div>

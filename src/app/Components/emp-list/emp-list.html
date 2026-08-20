@@ -1,0 +1,67 @@
+<div class="employee-grid">
+  <div class="employee-card" *ngFor="let employee of empData">
+
+    <div class="employee-header">
+      <div class="employee-avatar">
+        {{ employee.firstName.charAt(0) }}{{ employee.lastName.charAt(0) }}
+      </div>
+
+      <div class="employee-info">
+        <h3>{{ employee.firstName }} {{ employee.lastName }}</h3>
+        <span>{{ employee.designation }}</span>
+      </div>
+
+      <span
+        class="status"
+        [class.active]="employee.status === 'Active'"
+        [class.inactive]="employee.status === 'Inactive'">
+        {{ employee.status }}
+      </span>
+    </div>
+
+    <div class="employee-details">
+
+      <div class="detail-item">
+        <span class="label">Employee ID</span>
+        <span class="value">{{ employee.employeeId }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Department</span>
+        <span class="value">{{ employee.department }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Email</span>
+        <span class="value">{{ employee.email }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Mobile</span>
+        <span class="value">{{ employee.mobile }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Joining Date</span>
+        <span class="value">{{ employee.joiningDate | date:'dd MMM yyyy' }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Salary</span>
+        <span class="value">₹{{ employee.salary | number }}</span>
+      </div>
+
+    </div>
+
+    <div class="employee-footer">
+      <button class="view-btn" [routerLink]="['/employee',{outlets:{detailsOutlet:['details',employee.employeeId]}} ]">
+        View Details
+      </button>
+
+      <!-- <button class="edit-btn" (click)="editEmployee(employee)">
+        Edit
+      </button> -->
+    </div>
+
+  </div>
+</div>
